@@ -1,0 +1,12 @@
+# OpenClaw workspace files
+AGENTS.md
+SOUL.md
+USER.md
+TOOLS.md
+HEARTBEAT.md
+IDENTITY.md
+memory/
+.openclaw/
+
+# macOS
+.DS_Store

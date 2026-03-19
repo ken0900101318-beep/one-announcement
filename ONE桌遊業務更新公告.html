@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE桌遊 業務更新公告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .header .date {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.5em;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        h4 {
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background-color: #f8f9ff;
+        }
+        
+        .alert {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .alert-info {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .badge-new {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .badge-warning {
+            background-color: #ffc107;
+            color: #333;
+        }
+        
+        .feature-box {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .price-highlight {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #dc3545;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 30px 0;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📢 ONE桌遊 業務更新公告</h1>
+            <div class="date">更新日期：2026年3月</div>
+        </div>
+        
+        <div class="content">
+            <!-- 藍芽喇叭 2.0 -->
+            <h2>🔊 藍芽喇叭 2.0 功能升級</h2>
+            
+            <div class="feature-box">
+                <h3>1.0 原有功能</h3>
+                <ul>
+                    <li>✅ <strong>廣播提醒</strong>
+                        <ul>
+                            <li>儲存的音效固定時間播放</li>
+                            <li>到店播放提醒</li>
+                            <li>剩下10分鐘播放提醒</li>
+                            <li>離店播放提醒</li>
+                        </ul>
+                    </li>
+                    <li>✅ <strong>藍芽配對</strong>
+                        <ul>
+                            <li>客人可配對喇叭聽音樂</li>
+                            <li>每次訂單結束自動更換配對密碼</li>
+                        </ul>
+                    </li>
+                    <li>✅ <strong>深夜模式</strong>
+                        <ul>
+                            <li>深夜時段自動關閉藍芽功能</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-box" style="background: #e8f5e9;">
+                <h3>2.0 新增功能 <span class="badge badge-new">NEW</span></h3>
+                <ol>
+                    <li><strong>音量控制</strong> - 可控制藍芽配對的最大音量</li>
+                    <li><strong>音質提升</strong> - 更好的音質表現</li>
+                    <li><strong>即時語音廣播</strong> - 可自訂文字轉語音即時播放<br>
+                        <small>（用於與店內客人溝通，避免不接電話）</small></li>
+                    <li><strong>自訂廣播內容</strong> - 廣播提醒可自訂文字內容</li>
+                    <li><strong>深夜音量限制</strong> - 深夜時段可限定藍芽音量上限</li>
+                </ol>
+            </div>
+            
+            <hr>
+            
+            <!-- 新店家合約調整 -->
+            <h2>📋 新店家合約調整</h2>
+            <div class="alert alert-info">
+                <strong>生效日期：</strong>115年3月1日起
+            </div>
+            
+            <h3>指定合作廠商項目</h3>
+            <p>新開的 ONE桌遊系統，以下項目<strong>需使用公司指定合作廠商</strong>：</p>
+            <ul>
+                <li>麻將桌</li>
+                <li>水電配線</li>
+                <li>輕隔間</li>
+                <li>冷氣</li>
+                <li>包廂門</li>
+            </ul>
+            
+            <h3>設備費用調整</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>原方案</th>
+                        <th>新方案</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>藍芽喇叭</td>
+                        <td>免費贈送</td>
+                        <td><span class="price-highlight">NT$3,000/個</span></td>
+                    </tr>
+                    <tr>
+                        <td>繳費機升級<br><small>（找100元機型）</small></td>
+                        <td>-</td>
+                        <td><span class="price-highlight">NT$30,000</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <hr>
+            
+            <!-- 店家轉移場地服務 -->
+            <h2>🏢 店家轉移場地服務</h2>
+            
+            <h3>服務內容</h3>
+            <ul>
+                <li>現場丈量</li>
+                <li>場地繪圖</li>
+                <li>工班施工聯絡</li>
+                <li>控電箱重做</li>
+            </ul>
+            
+            <h3>收費標準</h3>
+            <div class="feature-box">
+                <p style="font-size: 1.3em; font-weight: bold; color: #667eea;">
+                    工本費：NT$50,000
+                </p>
+                <p style="margin-top: 10px;">（協助轉移到好）</p>
+            </div>
+            
+            <div class="alert alert-danger">
+                <strong>⚠️ 注意：</strong> 此費用<strong>不包含</strong>搬運費用
+            </div>
+            
+            <hr>
+            
+            <!-- 使用執照區域限制更新 -->
+            <h2>🗺️ 使用執照區域限制更新</h2>
+            
+            <h3>各區域管制狀況</h3>
+            <p><strong>嚴格管制區（要求 D1 執照）：</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>區域</th>
+                        <th>管制程度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>台中市</td>
+                        <td><span class="badge badge-warning">⚠️⚠️ 最嚴格</span></td>
+                    </tr>
+                    <tr>
+                        <td>新北市</td>
+                        <td><span class="badge badge-warning">⚠️⚠️ 嚴格</span></td>
+                    </tr>
+                    <tr>
+                        <td>桃園市</td>
+                        <td><span class="badge badge-warning">⚠️ 部分區域</span></td>
+                    </tr>
+                    <tr>
+                        <td>新竹市</td>
+                        <td><span class="badge badge-warning">⚠️ 部分區域</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="alert alert-danger">
+                <h4>🔴 台中市特別公告</h4>
+                <p>由於使用執照限制，台中目前<strong>僅商業區可變更</strong>，但商業區分布有限，故：</p>
+                <p style="font-size: 1.1em; font-weight: bold; margin-top: 10px;">
+                    台中已取消區域保障條件
+                </p>
+            </div>
+            
+            <hr>
+            
+            <!-- 場地開發協助服務 -->
+            <h2>🔍 場地開發協助服務</h2>
+            
+            <h3>服務申請條件</h3>
+            
+            <h4>名額限制</h4>
+            <ul>
+                <li>為確保服務品質，各區域設有開發上限</li>
+                <li><strong>表單未列區域 = 名額已滿</strong>，暫不開放申請</li>
+            </ul>
+            
+            <h4>申請時需明確填寫</h4>
+            <ol>
+                <li><strong>區域首選</strong>（三處）</li>
+                <li><strong>預算啟動資金</strong>（300萬 或 500萬）</li>
+            </ol>
+            
+            <h3>服務內容與物件提供</h3>
+            <div class="feature-box">
+                <p><strong>合約期間提供物件數：最多 3 個</strong></p>
+                
+                <h4 style="margin-top: 15px;">物件類型定義：</h4>
+                <ul>
+                    <li><strong>「有資格取得變更許可物件」</strong><br>
+                        經專業建築師評估，符合土地使用分區及建築法規，可變更為 D1（休閒服務業）</li>
+                    <li><strong>「未取得變更許可物件」</strong><br>
+                        尚未取得或無法取得 D1 變更資格</li>
+                </ul>
+            </div>
+            
+            <h3>費用說明</h3>
+            
+            <h4>預付訂金</h4>
+            <div class="feature-box">
+                <p style="font-size: 1.3em; font-weight: bold; color: #667eea;">
+                    NT$100,000
+                </p>
+                <p style="margin-top: 5px;">（需先簽署加盟合約）</p>
+            </div>
+            
+            <h4>服務佣金（成交後收取）</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>物件類型</th>
+                        <th>佣金標準</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>有資格取得變更許可物件</strong></td>
+                        <td>成交物件 <span class="price-highlight">1個月租金</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>未取得變更許可物件</strong></td>
+                        <td>成交物件 <span class="price-highlight">半個月租金</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>退款機制</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>情況</th>
+                        <th>退款比例</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>提供 3 個物件後仍無法滿足需求</td>
+                        <td>退還 <strong>50% 訂金</strong></td>
+                    </tr>
+                    <tr>
+                        <td>合約期滿未完整提供 3 個物件</td>
+                        <td><strong>全額退還</strong> 訂金</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <hr>
+            
+            <h2>📝 相關連結</h2>
+            <ul>
+                <li><a href="#" style="color: #667eea;">場地開發服務申請表單</a>（請填寫區域需求與預算）</li>
+                <li><a href="#" style="color: #667eea;">加盟合約範本</a></li>
+            </ul>
+            
+            <div class="alert alert-info" style="margin-top: 30px;">
+                <strong>ℹ️ 如有任何疑問，請聯繫總部業務人員</strong>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>ONE桌遊 總部</strong></p>
+            <p>更新日期：2026年3月 | 聯絡窗口：加盟業務部門</p>
+        </div>
+    </div>
+</body>
+</html>
