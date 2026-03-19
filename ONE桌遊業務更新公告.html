@@ -512,7 +512,7 @@
             <hr>
             
             <!-- 場地開發協助服務 -->
-            <h2 id="location-service">🔍 場地開發協助服務（想再開分店者必看）</h2>
+            <h2 id="location-service">🔍 場地開發協助服務<span style="color: #dc3545;">（想再開分店者必看）</span> ⭐</h2>
             
             <h3>服務申請條件</h3>
             
@@ -616,25 +616,37 @@
             history.scrollRestoration = 'manual';
         }
         
+        // 暫時移除 URL 的 hash（如果有的話）
+        if (window.location.hash && !sessionStorage.getItem('allowHash')) {
+            var cleanUrl = window.location.href.split('#')[0];
+            history.replaceState(null, '', cleanUrl);
+        }
+        
         // 立即執行，確保頁面從最上方開始
         (function() {
-            if (!window.location.hash) {
-                // 立即滾到頂部
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
-                window.scrollTo(0, 0);
-            }
+            // 立即滾到頂部（多次確保）
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            window.scrollTo(0, 0);
         })();
         
         // 頁面載入後再次確認（針對 iOS Safari）
         window.addEventListener('pageshow', function(event) {
-            if (!window.location.hash) {
-                setTimeout(function() {
-                    document.documentElement.scrollTop = 0;
-                    document.body.scrollTop = 0;
-                    window.scrollTo(0, 0);
-                }, 0);
-            }
+            setTimeout(function() {
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+        
+        // 當點擊目錄連結時，允許 hash
+        document.addEventListener('DOMContentLoaded', function() {
+            var tocLinks = document.querySelectorAll('.toc-item a');
+            tocLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    sessionStorage.setItem('allowHash', 'true');
+                });
+            });
         });
     </script>
 </body>
