@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" style="scroll-behavior: auto;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,11 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -606,25 +611,29 @@
     </div>
     
     <script>
-        // 立即執行，確保頁面從最上方開始
-        if (!window.location.hash) {
-            // 立即滾到頂部
-            if (window.history.scrollRestoration) {
-                window.history.scrollRestoration = 'manual';
-            }
-            window.scrollTo(0, 0);
+        // 強制禁用瀏覽器記住捲動位置
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
         }
         
-        // 頁面載入後再次確認
-        window.addEventListener('DOMContentLoaded', function() {
+        // 立即執行，確保頁面從最上方開始
+        (function() {
             if (!window.location.hash) {
+                // 立即滾到頂部
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
                 window.scrollTo(0, 0);
             }
-        });
+        })();
         
-        window.addEventListener('load', function() {
+        // 頁面載入後再次確認（針對 iOS Safari）
+        window.addEventListener('pageshow', function(event) {
             if (!window.location.hash) {
-                window.scrollTo(0, 0);
+                setTimeout(function() {
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                    window.scrollTo(0, 0);
+                }, 0);
             }
         });
     </script>
