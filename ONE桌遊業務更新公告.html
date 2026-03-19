@@ -20,7 +20,7 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -45,23 +45,65 @@
             opacity: 0.9;
         }
         
+        .toc {
+            background: #f8f9ff;
+            padding: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .toc h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+        
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+        }
+        
+        .toc-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .toc-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+        }
+        
         .content {
             padding: 30px;
         }
         
         h2 {
             color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 3px solid #667eea;
             font-size: 1.5em;
+            scroll-margin-top: 20px;
         }
         
         h3 {
             color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
             font-size: 1.2em;
         }
         
@@ -104,6 +146,35 @@
             background-color: #f8f9ff;
         }
         
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-column {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .comparison-column h3 {
+            color: #667eea;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .comparison-column.new-version {
+            background: #e8f5e9;
+        }
+        
+        .comparison-column.new-version h3 {
+            color: #28a745;
+            border-bottom: 2px solid #28a745;
+        }
+        
         .alert {
             background-color: #fff3cd;
             border-left: 4px solid #ffc107;
@@ -120,6 +191,11 @@
         .alert-info {
             background-color: #d1ecf1;
             border-left: 4px solid #17a2b8;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
         }
         
         .badge {
@@ -157,7 +233,7 @@
         hr {
             border: none;
             border-top: 2px solid #eee;
-            margin: 30px 0;
+            margin: 40px 0;
         }
         
         .footer {
@@ -186,6 +262,18 @@
                 padding: 20px;
             }
             
+            .toc {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+            
             h2 {
                 font-size: 1.3em;
             }
@@ -207,57 +295,87 @@
             <div class="date">更新日期：2026年3月</div>
         </div>
         
+        <!-- 目錄 -->
+        <div class="toc">
+            <h2>📑 公告目錄</h2>
+            <ul class="toc-list">
+                <li class="toc-item">
+                    <a href="#bluetooth">🔊 藍芽喇叭 2.0 功能升級</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#contract">📋 新店家合約調整</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#relocation">🏢 店家轉移場地服務</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#regions">🗺️ 使用執照區域限制</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#location-service">🔍 場地開發協助服務</a>
+                </li>
+            </ul>
+        </div>
+        
         <div class="content">
             <!-- 藍芽喇叭 2.0 -->
-            <h2>🔊 藍芽喇叭 2.0 功能升級</h2>
+            <h2 id="bluetooth">🔊 藍芽喇叭 2.0 功能升級</h2>
             
-            <div class="feature-box">
-                <h3>1.0 原有功能</h3>
-                <ul>
-                    <li>✅ <strong>廣播提醒</strong>
-                        <ul>
-                            <li>儲存的音效固定時間播放</li>
-                            <li>到店播放提醒</li>
-                            <li>剩下10分鐘播放提醒</li>
-                            <li>離店播放提醒</li>
-                        </ul>
-                    </li>
-                    <li>✅ <strong>藍芽配對</strong>
-                        <ul>
-                            <li>客人可配對喇叭聽音樂</li>
-                            <li>每次訂單結束自動更換配對密碼</li>
-                        </ul>
-                    </li>
-                    <li>✅ <strong>深夜模式</strong>
-                        <ul>
-                            <li>深夜時段自動關閉藍芽功能</li>
-                        </ul>
-                    </li>
-                </ul>
+            <div class="alert alert-success">
+                <strong>📅 預計上線時間：2026年4月15日</strong>
             </div>
             
-            <div class="feature-box" style="background: #e8f5e9;">
-                <h3>2.0 新增功能 <span class="badge badge-new">NEW</span></h3>
-                <ol>
-                    <li><strong>音量控制</strong> - 可控制藍芽配對的最大音量</li>
-                    <li><strong>音質提升</strong> - 更好的音質表現</li>
-                    <li><strong>即時語音廣播</strong> - 可自訂文字轉語音即時播放<br>
-                        <small>（用於與店內客人溝通，避免不接電話）</small></li>
-                    <li><strong>自訂廣播內容</strong> - 廣播提醒可自訂文字內容</li>
-                    <li><strong>深夜音量限制</strong> - 深夜時段可限定藍芽音量上限</li>
-                </ol>
+            <div class="comparison-table">
+                <!-- 1.0 功能 -->
+                <div class="comparison-column">
+                    <h3>1.0 原有功能</h3>
+                    <ul>
+                        <li><strong>廣播提醒</strong>
+                            <ul>
+                                <li>儲存的音效固定時間播放</li>
+                                <li>到店播放提醒</li>
+                                <li>剩下10分鐘播放提醒</li>
+                                <li>離店播放提醒</li>
+                            </ul>
+                        </li>
+                        <li><strong>藍芽配對</strong>
+                            <ul>
+                                <li>客人可配對喇叭聽音樂</li>
+                                <li>每次訂單結束自動更換配對密碼</li>
+                            </ul>
+                        </li>
+                        <li><strong>深夜模式</strong>
+                            <ul>
+                                <li>深夜時段自動關閉藍芽功能</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 2.0 新增功能 -->
+                <div class="comparison-column new-version">
+                    <h3>2.0 新增功能 <span class="badge badge-new">NEW</span></h3>
+                    <ol>
+                        <li><strong>音量控制</strong><br>可控制藍芽配對的最大音量</li>
+                        <li><strong>音質提升</strong><br>更好的音質表現</li>
+                        <li><strong>即時語音廣播</strong><br>可自訂文字轉語音即時播放<br>
+                            <small>（用於與店內客人溝通，避免不接電話）</small></li>
+                        <li><strong>自訂廣播內容</strong><br>廣播提醒可自訂文字內容</li>
+                        <li><strong>深夜音量限制</strong><br>深夜時段可限定藍芽音量上限</li>
+                    </ol>
+                </div>
             </div>
             
             <hr>
             
             <!-- 新店家合約調整 -->
-            <h2>📋 新店家合約調整</h2>
+            <h2 id="contract">📋 新店家合約調整</h2>
             <div class="alert alert-info">
                 <strong>生效日期：</strong>115年3月1日起
             </div>
             
             <h3>指定合作廠商項目</h3>
-            <p>新開的 ONE桌遊系統，以下項目<strong>需使用公司指定合作廠商</strong>：</p>
+            <p>新開的店家，以下項目<strong>需使用公司指定合作廠商</strong>：</p>
             <ul>
                 <li>麻將桌</li>
                 <li>水電配線</li>
@@ -265,6 +383,11 @@
                 <li>冷氣</li>
                 <li>包廂門</li>
             </ul>
+            
+            <div class="alert alert-warning">
+                <strong>💰 變更合法 D1 場地費用：</strong><br>
+                平均花費在 <strong>50~100萬元</strong>（由建築師評估）
+            </div>
             
             <h3>設備費用調整</h3>
             <table>
@@ -292,7 +415,7 @@
             <hr>
             
             <!-- 店家轉移場地服務 -->
-            <h2>🏢 店家轉移場地服務</h2>
+            <h2 id="relocation">🏢 店家轉移場地服務</h2>
             
             <h3>服務內容</h3>
             <ul>
@@ -317,7 +440,7 @@
             <hr>
             
             <!-- 使用執照區域限制更新 -->
-            <h2>🗺️ 使用執照區域限制更新</h2>
+            <h2 id="regions">🗺️ 使用執照區域限制更新</h2>
             
             <h3>各區域管制狀況</h3>
             <p><strong>嚴格管制區（要求 D1 執照）：</strong></p>
@@ -359,7 +482,7 @@
             <hr>
             
             <!-- 場地開發協助服務 -->
-            <h2>🔍 場地開發協助服務</h2>
+            <h2 id="location-service">🔍 場地開發協助服務</h2>
             
             <h3>服務申請條件</h3>
             
