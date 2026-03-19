@@ -606,13 +606,25 @@
     </div>
     
     <script>
-        // 確保頁面載入時從最上方開始（除非 URL 有特定錨點）
-        window.addEventListener('load', function() {
-            // 只在沒有錨點時才滾到最上面
+        // 立即執行，確保頁面從最上方開始
+        if (!window.location.hash) {
+            // 立即滾到頂部
+            if (window.history.scrollRestoration) {
+                window.history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+        }
+        
+        // 頁面載入後再次確認
+        window.addEventListener('DOMContentLoaded', function() {
             if (!window.location.hash) {
-                setTimeout(function() {
-                    window.scrollTo(0, 0);
-                }, 100);
+                window.scrollTo(0, 0);
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
             }
         });
     </script>
