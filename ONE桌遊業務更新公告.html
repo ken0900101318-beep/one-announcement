@@ -118,6 +118,11 @@
             margin-bottom: 15px;
         }
         
+        ol {
+            margin-left: 40px;
+            margin-bottom: 15px;
+        }
+        
         li {
             margin-bottom: 8px;
         }
@@ -214,7 +219,8 @@
         
         .badge-warning {
             background-color: #ffc107;
-            color: #333;
+            color: #000;
+            font-weight: 700;
         }
         
         .feature-box {
@@ -234,6 +240,25 @@
             border: none;
             border-top: 2px solid #eee;
             margin: 40px 0;
+        }
+        
+        .thumbs-up {
+            display: inline-block;
+            animation: bounce 2s infinite;
+            margin-left: 8px;
+            font-size: 1.2em;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
         }
         
         .footer {
@@ -312,7 +337,7 @@
                     <a href="#regions">🗺️ 使用執照區域限制</a>
                 </li>
                 <li class="toc-item">
-                    <a href="#location-service">🔍 場地開發協助服務</a>
+                    <a href="#location-service" style="color: #dc3545; font-weight: 700;">🔍 場地開發協助服務（想再開分店者必看）</a>
                 </li>
             </ul>
         </div>
@@ -356,9 +381,9 @@
                 <div class="comparison-column new-version">
                     <h3>2.0 新增功能 <span class="badge badge-new">NEW</span></h3>
                     <ol>
-                        <li><strong>音量控制</strong><br>可控制藍芽配對的最大音量</li>
+                        <li><strong>音量控制</strong><br>可控制藍芽配對的最大音量 <span class="thumbs-up" style="color: #dc3545;">👍</span></li>
                         <li><strong>音質提升</strong><br>更好的音質表現</li>
-                        <li><strong>即時語音廣播</strong><br>可自訂文字轉語音即時播放<br>
+                        <li><strong>即時語音廣播</strong><br>可自訂文字轉語音即時播放 <span class="thumbs-up" style="color: #dc3545;">👍</span><br>
                             <small>（用於與店內客人溝通，避免不接電話）</small></li>
                         <li><strong>自訂廣播內容</strong><br>廣播提醒可自訂文字內容</li>
                         <li><strong>深夜音量限制</strong><br>深夜時段可限定藍芽音量上限</li>
@@ -369,7 +394,7 @@
             <hr>
             
             <!-- 新店家合約調整 -->
-            <h2 id="contract">📋 新店家合約調整</h2>
+            <h2 id="contract">📋 新店家合約調整 ⭐</h2>
             <div class="alert alert-info">
                 <strong>生效日期：</strong>115年3月1日起
             </div>
@@ -482,7 +507,7 @@
             <hr>
             
             <!-- 場地開發協助服務 -->
-            <h2 id="location-service">🔍 場地開發協助服務</h2>
+            <h2 id="location-service">🔍 場地開發協助服務（想再開分店者必看）</h2>
             
             <h3>服務申請條件</h3>
             
