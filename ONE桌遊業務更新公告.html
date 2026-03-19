@@ -604,5 +604,17 @@
             <p>更新日期：2026年3月 | 聯絡窗口：加盟業務部門</p>
         </div>
     </div>
+    
+    <script>
+        // 確保頁面載入時從最上方開始（除非 URL 有特定錨點）
+        window.addEventListener('load', function() {
+            // 只在沒有錨點時才滾到最上面
+            if (!window.location.hash) {
+                setTimeout(function() {
+                    window.scrollTo(0, 0);
+                }, 100);
+            }
+        });
+    </script>
 </body>
 </html>
